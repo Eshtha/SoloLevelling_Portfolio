@@ -385,28 +385,36 @@ animate();
 /* ============================================================
    3. PLAYER STATS (tech stack as RPG bars)
 ============================================================ */
-const stats=[
-  {name:'STRENGTH',skill:'C++ / Python',val:88,desc:'Core logic & ML'},
-  {name:'AGILITY',skill:'JavaScript / React',val:94,desc:'Dynamic interfaces'},
-  {name:'STAMINA',skill:'Node.js / Tailwind',val:82,desc:'Full-stack endurance'},
-  {name:'INTELLIGENCE',skill:'AI / ML / Pandas',val:90,desc:'Neural craftsmanship'},
-  {name:'SENSE',skill:'Figma / UI·UX',val:86,desc:'Design perception'},
-  {name:'STORAGE',skill:'Git / GitHub',val:92,desc:'Version mastery'},
+const statCats=[
+  {title:'FRONTEND',skills:[
+    {name:'HTML5',val:95},{name:'CSS3',val:93},{name:'JavaScript',val:90},
+    {name:'React',val:88},{name:'Next.js',val:85},{name:'Tailwind CSS',val:92}
+  ]},
+  {title:'BACKEND & DATABASE',skills:[
+    {name:'Node.js',val:87},{name:'Express.js',val:84},{name:'MongoDB',val:82},
+    {name:'Python',val:90},{name:'Supabase',val:80},{name:'Firebase',val:83}
+  ]},
+  {title:'DESIGN & CREATIVE TOOLS',skills:[
+    {name:'Figma',val:91},{name:'Canva',val:88},{name:'Framer',val:85},{name:'Adobe XD',val:82}
+  ]},
+  {title:'TOOLS & DEPLOYMENT',skills:[
+    {name:'Git',val:92},{name:'GitHub',val:94},{name:'VS Code',val:95},
+    {name:'Vercel',val:90},{name:'Antigravity',val:78}
+  ]}
 ];
 const sl=document.getElementById('statlist');
-stats.forEach(s=>{
-  const row=document.createElement('div');
-  row.className='stat-row';
-  row.innerHTML=`
-    <div class="stat-name">${s.name}<div class="stat-desc">${s.desc}</div></div>
-    <div class="stat-bar"><div class="stat-fill" data-val="${s.val}"></div></div>
-    <div class="stat-val">${s.val}</div>`;
-  sl.appendChild(row);
-});
-// sub-skill chips
-['HTML5','CSS3','JavaScript','React.js','Node.js','Tailwind','Python','Pandas','C++','Git','GitHub','Figma']
-.forEach(tk=>{
-  const row=document.createElement('span');
+statCats.forEach(function(cat){
+  const catDiv=document.createElement('div');
+  catDiv.className='stat-cat';
+  catDiv.innerHTML='<div class="stat-cat-title">'+cat.title+'</div><div class="stat-grid"></div>';
+  const grid=catDiv.querySelector('.stat-grid');
+  cat.skills.forEach(function(s){
+    const row=document.createElement('div');
+    row.className='stat-row';
+    row.innerHTML='<div class="stat-name">'+s.name+'</div><div class="stat-bar"><div class="stat-fill" data-val="'+s.val+'"></div></div><div class="stat-val">'+s.val+'</div>';
+    grid.appendChild(row);
+  });
+  sl.appendChild(catDiv);
 });
 
 /* ============================================================
