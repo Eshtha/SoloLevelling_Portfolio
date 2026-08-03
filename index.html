@@ -92,6 +92,13 @@
     box-shadow:0 0 14px var(--blue)}
   .stat-val{width:50px;text-align:right;font-family:'Orbitron';color:var(--blue);font-size:14px}
   .stat-desc{font-size:13px;color:#7fa8d8;margin-left:8px}
+  /* ---------- CHANGE 2: stat category styles ---------- */
+  .stat-cat{margin-bottom:36px}
+  .stat-cat-title{font-family:'Orbitron';font-size:15px;letter-spacing:3px;color:var(--violet-glow);
+    margin-bottom:18px;text-shadow:0 0 10px var(--violet);display:flex;align-items:center;gap:12px}
+  .stat-cat-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--violet-glow),transparent)}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 50px}
+  @media(max-width:680px){.stat-grid{grid-template-columns:1fr}}
   /* ---------- gates (projects) ---------- */
   .gates{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
   .gate{position:relative;padding:26px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
@@ -196,10 +203,10 @@
   <!-- STATS -->
   <section id="stats">
     <div class="wrap">
-      <div class="panel-tag">/ ABILITY STATS</div>
-      <h2 class="glow" style="font-size:42px;margin-bottom:34px">PLAYER STATS</h2>
-      <div class="panel" data-anim>
-        <div class="panel-tag">/ SKILLS ACQUIRED</div>
+      <div class="panel-tag scroll-3d">/ ABILITY STATS</div>
+      <h2 class="glow scroll-3d" style="font-size:42px;margin-bottom:34px">PLAYER STATS</h2>
+      <div class="panel scroll-3d" data-anim>
+        <div class="panel-tag">/ ALL SKILLS ACQUIRED</div>
         <div id="statlist"></div>
       </div>
     </div>
