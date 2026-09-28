@@ -43,9 +43,6 @@ The magic crystals and runes used to forge this domain:
 
 To run this System Environment on your local machine, you must complete the following quest:
 
-### Quest Requirements:
-- `Git` installed on your local machine.
-- A modern web browser.
 
 ### Quest Steps:
 
