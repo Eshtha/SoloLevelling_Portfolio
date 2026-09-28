@@ -28,13 +28,7 @@ This repository contains the source code for a highly interactive, animated, and
 
 ---
 
-## 🛠️ [ EQUIPPED ITEMS / TECH STACK ]
 
-The magic crystals and runes used to forge this domain:
-
-*   **Frontend Magic:** HTML5, CSS3, JavaScript (ES6+)
-*   **Visual Enhancements:** HTML Canvas API, Custom CSS Keyframes
-*   **Hosting / Domain:** Deployed on Vercel
 
 ---
 
